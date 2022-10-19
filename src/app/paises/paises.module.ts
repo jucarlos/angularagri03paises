@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { PaisesRoutingModule } from './paises-routing.module';
 import { ListadoComponent } from './listado/listado.component';
 import { DetalleComponent } from './detalle/detalle.component';
+import { MaterialModule } from '../material/material.module';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { DetalleComponent } from './detalle/detalle.component';
   ],
   imports: [
     CommonModule,
-    PaisesRoutingModule
+    PaisesRoutingModule,
+    MaterialModule,
   ]
 })
 export class PaisesModule { }

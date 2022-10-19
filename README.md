@@ -24,7 +24,11 @@ Después de crear los componentes, configuro las rutas de la app principal
 
 ``` ng g s paises/services/paises ```
 
+Para hacer peticiones http, en app.module, hay que importar el módulo de HttpClientModule. Luego en el servicio hay que inyectar el cliente http.
+
 - Esos paises son de un tipo concreto. ( Crearemos el tipo de dato ).
+
+en el detalle del país hay que obtener el parámetro que viene en la url y con ese parámetro, obtener el pais que me dará el servicio.
 
 
 El fin principal es tener todo por consola.

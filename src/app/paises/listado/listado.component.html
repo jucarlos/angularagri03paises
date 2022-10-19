@@ -1,1 +1,66 @@
-<p>listado works!</p>
+<mat-card>
+    <h1>Listado de Paises</h1>
+    <mat-divider></mat-divider>
+
+
+    <mat-form-field appearance="standard">
+        <mat-label>Filtro</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Buscar..." #input>
+      </mat-form-field>
+      
+      <div class="mat-elevation-z8">
+        <table mat-table [dataSource]="dataSource" matSort>
+      
+          <!-- Bandera -->
+          <ng-container matColumnDef="bandera">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Bandera </th>
+            <td mat-cell *matCellDef="let row">
+                <img [src]="row.flags.svg" class="w80">
+           </td>
+          </ng-container>
+      
+          <!-- name -->
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Nombre </th>
+            <td mat-cell *matCellDef="let row"> {{row.name}} </td>
+          </ng-container>
+      
+          <!-- capital -->
+          <ng-container matColumnDef="capital">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Capital </th>
+            <td mat-cell *matCellDef="let row"> {{row.capital}} </td>
+          </ng-container>
+      
+          <!-- population -->
+          <ng-container matColumnDef="population">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Poblacion </th>
+            <td mat-cell *matCellDef="let row"> {{row.population | number }} </td>
+          </ng-container>
+      
+           <!-- action   -->
+           <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Actions </th>
+            <td mat-cell *matCellDef="let row">
+                <button mat-raised-button 
+                        [routerLink]="['/paises/verpais', row.alpha2Code ]"
+                        color="accent">
+                    Ver
+                </button>
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      
+          <!-- Row shown when there is no matching data. -->
+          <tr class="mat-row" *matNoDataRow>
+            <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+          </tr>
+        </table>
+      
+        <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Seleccione la cantidad de paises"></mat-paginator>
+      </div>
+
+    
+
+</mat-card>
