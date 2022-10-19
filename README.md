@@ -1,27 +1,46 @@
-# Paises
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.3.
 
-## Development server
+## Aplicación de Ver paises
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+1. Montar la estructura de la app.
 
-## Code scaffolding
+- listar paises ( table )
+- ver pais ( detalle )
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- módulo paises 
+``` ng g m paises --routing  ```
 
-## Build
+- componentes del módulo de paises:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+``` ng g c paises/listado  ```
 
-## Running unit tests
+``` ng g c paises/detalle ``` 
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Después de crear los componentes, configuro las rutas de la app principal
 
-## Running end-to-end tests
+2. Peticiones rest
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- Servicio rest.
 
-## Further help
+``` ng g s paises/services/paises ```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- Esos paises son de un tipo concreto. ( Crearemos el tipo de dato ).
+
+
+El fin principal es tener todo por consola.
+
+
+3. Aplicar estilos.
+
+- Angular material.
+
+hay que instalar angualar material ```ng add @angular/material ```
+
+Se recomienda tener un módulo para los módulos de angular material
+
+``` ng g m material ```
+
+
+
+
+
